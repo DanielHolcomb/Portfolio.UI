@@ -1,0 +1,38 @@
+﻿@page
+@model Portfolio.UI.Pages.ResumeModel
+@{
+    var vivintStartDate = new DateTime(2018, 04, 22).ToShortDateString();
+    var nectarwareStartDate = new DateTime(2021, 02, 01).ToShortDateString();
+}
+<h1>Daniel Holcomb</h1>
+<h3>Skills</h3>
+<p>
+    C#
+    <b>.</b>
+    dotNET
+    <b>.</b>
+    Unity
+    <b>.</b>
+    Azure
+    <b>.</b>
+    Git
+    <b>.</b>
+    SQL & SOQL
+    <b>.</b>
+    APIs & Micro Services
+    <b>.</b>
+    ...
+</p>
+<h3>Experience</h3>
+<ul>
+    <li><b>Vivint Smart Home</b> - <i>@vivintStartDate - @DateTime.Now.ToShortDateString()</i>
+        <ul>
+            <li>Build Micro Services to support Customer Experience Teams</li>
+        </ul>
+    </li>
+    <li><b>Nectarware</b> - <i>@nectarwareStartDate - @DateTime.Now.ToShortDateString()</i>
+        <ul>
+            <li>Founder, Programmer, Designer, Musician, Artist</li>
+        </ul>
+    </li>
+</ul>
