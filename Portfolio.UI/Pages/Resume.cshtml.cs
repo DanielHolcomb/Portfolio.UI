@@ -11,7 +11,7 @@ namespace Portfolio.UI.Pages
         {
             Skills = new List<string>()
             {
-                "C#", "dotNet", "Unity", "Azure", "Git", "SQL", "SOQL", "API", "Microservice", "..."
+                "C#", "dotNet", "Unity", "Azure", "Git", "SQL", "SOQL", "API", "Microservice", "CI/CD", "..."
             };
         }
     }
