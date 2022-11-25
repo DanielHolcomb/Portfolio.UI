@@ -18,13 +18,22 @@
     <div class="col"></div>
     <div class="col">
         <h2>Game Development</h2>
-        @for (int i = 0; i < nodes.Count; i++)
-        {
-            <p>@nodes[i].Name</p>;
-        }
+        <h3><i>Steam Commercial Releases</i></h3>
         @for (int i = 0; i < steamGames.Count; i++)
         {
-            <p>@steamGames[i].Data.Name</p>;
+            var game = steamGames[i].Data;
+            <h3>@game.Name</h3>;
+            <img src=@game.HeaderImage; />
+            @Html.Raw(@game.DetailedDescription)
+            <br />
+        }
+        <h3><i>Ludum Dare Game Jam Entries</i></h3>
+        @for (int i = 0; i < nodes.Count; i++)
+        {
+            var game = nodes[i];
+            <h3>@game.Name</h3>;
+            <img src=@game.Meta.Cover />
+            <p>@game.Body</p>
         }
     </div>
 </div>
