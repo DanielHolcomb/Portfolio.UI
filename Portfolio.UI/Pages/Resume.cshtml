@@ -7,21 +7,16 @@
 <h1>Daniel Holcomb</h1>
 <h3>Skills</h3>
 <p>
-    C#
-    <b>.</b>
-    dotNET
-    <b>.</b>
-    Unity
-    <b>.</b>
-    Azure
-    <b>.</b>
-    Git
-    <b>.</b>
-    SQL & SOQL
-    <b>.</b>
-    APIs & Micro Services
-    <b>.</b>
-    ...
+    @for (int i = 0; i < Model.Skills.Count; i++)
+    {
+        @Model.Skills[i]
+        ;
+        @if (i < Model.Skills.Count - 1)
+        {
+            <b>.</b>
+        }
+
+    }
 </p>
 <h3>Experience</h3>
 <ul>
