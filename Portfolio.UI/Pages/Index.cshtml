@@ -5,6 +5,7 @@
     ViewData["Title"] = "Home page";
     var nodes = Model.LudumDareGameData?.Node;
     var steamGames = Model.SteamGameData;
+    var dotnetdata = Model.DotNetData;
 }
 
 <div class="text-center">
@@ -13,7 +14,14 @@
 </div>
 <div class="row">
     <div class="col">
-        <h2>Micro Services</h2>
+        <h2>Web Development</h2>
+        <h3><i>Dot Net</i></h3>
+        @for (int i = 0; i < dotnetdata.Count; i++)
+        {
+            var site = dotnetdata[i];
+            <h3>@site.Name</h3>;
+            <p>@site.Description</p>;
+        }
     </div>
     <div class="col"></div>
     <div class="col">
