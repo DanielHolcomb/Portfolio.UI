@@ -23,9 +23,32 @@ namespace Portfolio.UI.Pages
 
         public async Task OnGet()
         {
-            LudumDareGameData = await HttpDynamo.GetRequestAsync<LudumDareGameData>(_httpClientFactory, "https://portfolioapi20221124122023.azurewebsites.net/Projects/GameDev/LudumDare");
-            SteamGameData = await HttpDynamo.GetRequestAsync<List<SteamGameData>>(_httpClientFactory, "https://portfolioapi20221124122023.azurewebsites.net/Projects/GameDev/Steam");
-            DotNetData = await HttpDynamo.GetRequestAsync<List<DotNetData>>(_httpClientFactory, "https://portfolioapi20221124122023.azurewebsites.net/Projects/WebDev/DotNet");
+            try
+            {
+                LudumDareGameData = await HttpDynamo.GetRequestAsync<LudumDareGameData>(_httpClientFactory, "https://portfolioapi20221124122023.azurewebsites.net/Projects/GameDev/LudumDare");
+            }
+            catch
+            {
+                LudumDareGameData = new LudumDareGameData();
+            }
+            try
+            {
+                SteamGameData = await HttpDynamo.GetRequestAsync<List<SteamGameData>>(_httpClientFactory, "https://portfolioapi20221124122023.azurewebsites.net/Projects/GameDev/Steam");
+            }
+            catch
+            {
+                SteamGameData = new List<SteamGameData>();
+            }
+
+            try
+            {
+                DotNetData = await HttpDynamo.GetRequestAsync<List<DotNetData>>(_httpClientFactory, "https://portfolioapi20221124122023.azurewebsites.net/Projects/WebDev/DotNet");
+            }
+            catch
+            {
+                DotNetData = new List<DotNetData>();
+            }
+            
         }
     }
 }
