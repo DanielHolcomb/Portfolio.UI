@@ -19,27 +19,30 @@
         @for (int i = 0; i < dotnetdata.Count; i++)
         {
             var site = dotnetdata[i];
-            <h3>@site.Name</h3>;
+            <a href=@site.Url><h3>@site.Name</h3></a>;
             <p>@site.Description</p>;
         }
     </div>
     <div class="col"></div>
     <div class="col">
         <h2>Game Development</h2>
-        <h3><i>Steam Commercial Releases</i></h3>
+        <a href="https://nectarware.io/games.html"><h3><i>Steam Commercial Releases</i></h3></a>
         @for (int i = 0; i < steamGames.Count; i++)
         {
             var game = steamGames[i].Data;
-            <h3>@game.Name</h3>;
+            <a href=@game.Website><h3>@game.Name</h3></a>;
             <img src=@game.HeaderImage; />
             @Html.Raw(@game.DetailedDescription)
             <br />
         }
-        <h3><i>Ludum Dare Game Jam Entries</i></h3>
+        <a href="https://ldjam.com/users/dandala88/games"><h3><i>Ludum Dare Game Jam Entries</i></h3></a>
         @for (int i = 0; i < nodes.Count; i++)
         {
             var game = nodes[i];
-            <h3>@game.Name</h3>;
+            var ldUrl = "https://ldjam.com" + game.Path;
+            <a href=@ldUrl><h3>@game.Name</h3></a>
+            var truncatedLink01 = game.Meta.Link01.Split("/releases")[0];
+            <a href=@truncatedLink01><i>Repository</i></a>
             <img src=@game.Meta.Cover />
             <p>@game.Body</p>
         }
